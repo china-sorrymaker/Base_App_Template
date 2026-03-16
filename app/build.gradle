@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.boss.unitsmaster'
-    compileSdk 34 // 暂时退到 34，保证和插件 8.2.2 完美兼容
+    compileSdk 34 
 
     defaultConfig {
         applicationId "com.boss.unitsmaster"
@@ -17,6 +17,7 @@ android {
 
     signingConfigs {
         release {
+            // 路径对齐：签名文件在根目录，所以这里用 ../
             storeFile file("../release-key.jks")
             storePassword "admin123"
             keyAlias "my-key-alias"
