@@ -1,49 +1,17 @@
-// app/build.gradle
-apply plugin: 'com.android.application'
-
-repositories {
-    google()
-    mavenCentral()
-}
-
-android {
-    namespace 'com.boss.unitsmaster'
-    compileSdk 34
-
-    defaultConfig {
-        applicationId "com.boss.unitsmaster"
-        minSdk 24
-        targetSdk 34
-        versionCode 1
-        versionName "1.0"
-    }
-
-    signingConfigs {
-        release {
-            storeFile file("../release-key.jks")
-            storePassword "admin123"
-            keyAlias "my-key-alias"
-            keyPassword "admin123"
-        }
-    }
-
-    buildTypes {
-        release {
-            signingConfig signingConfigs.release
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
     }
 }
-
-dependencies {
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.gms:play-services-ads:23.0.0'
-    implementation 'com.google.android.material:material:1.9.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+dependencyResolutionManagement {
+    // 关键：PREFER_SETTINGS 意思是“只听我的，别听 build.gradle 的”
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+    }
 }
+rootProject.name = "Base_App_Template"
+include ':app'
