@@ -16,7 +16,6 @@ android {
 
     signingConfigs {
         release {
-            // 确保 release-key.jks 在根目录
             storeFile file("../release-key.jks")
             storePassword "admin123"
             keyAlias "my-key-alias"
@@ -28,6 +27,8 @@ android {
         release {
             signingConfig signingConfigs.release
             minifyEnabled false
+            // 暂时去掉混淆检查，减少资源处理负担
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -41,6 +42,4 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.gms:play-services-ads:23.0.0'
-    implementation 'com.google.android.material:material:1.9.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
