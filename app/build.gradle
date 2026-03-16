@@ -16,7 +16,7 @@ android {
 
     signingConfigs {
         release {
-            // 确保你的 jks 文件就在根目录
+            // 确保你项目根目录真的有这个文件
             storeFile file("../release-key.jks")
             storePassword "admin123"
             keyAlias "my-key-alias"
@@ -28,9 +28,8 @@ android {
         release {
             signingConfig signingConfigs.release
             minifyEnabled false
-            // 暂时关闭资源压缩，排除它对依赖解析的干扰
-            shrinkResources false 
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // 关键：强制关闭资源收缩，这往往是报错的元凶
+            shrinkResources false
         }
     }
 
@@ -40,9 +39,8 @@ android {
     }
 }
 
+// 暴力逻辑：强制锁定所有依赖版本，不让 Gradle 乱跳
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.gms:play-services-ads:23.0.0'
-    implementation 'com.google.android.material:material:1.9.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
