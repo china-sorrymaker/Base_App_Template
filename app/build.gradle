@@ -28,6 +28,9 @@ android {
         release {
             signingConfig signingConfigs.release
             minifyEnabled false
+            // 暂时关闭资源压缩，排除它对依赖解析的干扰
+            shrinkResources false 
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
