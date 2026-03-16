@@ -1,2 +1,17 @@
-rootProject.name = 'UnitsMaster'
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    // 强制：一旦规则定了，谁也不准改，直接解决 mutate 报错
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Base_App_Template"
 include ':app'
