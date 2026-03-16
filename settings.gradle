@@ -1,3 +1,4 @@
+// settings.gradle
 pluginManagement {
     repositories {
         google()
@@ -6,7 +7,7 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    // 强制全局统一仓库：解决那个 mutate 报错的终极方案
+    // 降维打击：开启此模式后，app/build.gradle 不准声明 repositories，强制统一
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
