@@ -1,4 +1,3 @@
-// settings.gradle
 pluginManagement {
     repositories {
         google()
@@ -7,7 +6,7 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    // 强制：如果 build.gradle 里敢私自声明仓库，直接报错。这能解决 mutate 冲突。
+    // 强制全局统一仓库：解决那个 mutate 报错的终极方案
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
