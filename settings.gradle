@@ -1,3 +1,4 @@
+// settings.gradle
 pluginManagement {
     repositories {
         google()
@@ -6,7 +7,8 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    // 强制：一旦规则定了，谁也不准改，直接解决 mutate 报错
+    // 核心：FAIL_ON_PROJECT_REPOS 意味着如果有任何项目试图自己声明仓库，直接报错。
+    // 这能强行解决那个 mutate 冲突。
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
