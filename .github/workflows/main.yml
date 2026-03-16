@@ -1,0 +1,25 @@
+name: Million-App-Base-AutoBuilder
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Build APK & AAB
+        run: ./gradlew assembleRelease bundleRelease
+        env:
+          KEY_STORE_PASSWORD: admin123
+          KEY_PASSWORD: admin123
+          ALIAS: my-key-alias
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: App-Ready-Files
+          path: |
+            **/build/outputs/apk/release/*.apk
+            **/build/outputs/bundle/release/*.aab
