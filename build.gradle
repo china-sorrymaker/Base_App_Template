@@ -4,7 +4,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        // 锁定插件版本，保证兼容性
         classpath 'com.android.tools.build:gradle:8.2.2'
     }
 }
