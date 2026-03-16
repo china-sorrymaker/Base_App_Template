@@ -1,25 +1,22 @@
+// app/build.gradle
 plugins {
     id 'com.android.application'
 }
 
 android {
     namespace 'com.boss.unitsmaster'
-    compileSdk 35
+    compileSdk 34 // 暂时退到 34，保证和插件 8.2.2 完美兼容
 
     defaultConfig {
         applicationId "com.boss.unitsmaster"
         minSdk 24
-        targetSdk 35
+        targetSdk 34
         versionCode 1
         versionName "1.0"
-        
-        // 这一行加上，双重保险
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
         release {
-            // 路径对齐：签名文件在根目录，所以这里用 ../
             storeFile file("../release-key.jks")
             storePassword "admin123"
             keyAlias "my-key-alias"
@@ -34,8 +31,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    
-    // 强制 Java 17，对齐 GitHub Actions 的环境
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
@@ -45,7 +41,6 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.gms:play-services-ads:23.0.0'
-    // 基础组件
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
