@@ -1,35 +1,27 @@
-name: Android CI
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-on:
-  push:
-    branches: [ "main" ]
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
+    <application
+        android:allowBackup="true"
+        android:label="Units Master"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat">
+        
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-    - name: set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: gradle
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+    </application>
 
-    # 重点 1：现场生成 8.2 的 Wrapper，不准 GitHub 用系统自带的 9.x
-    - name: Setup Gradle 8.2
-      run: gradle wrapper --gradle-version 8.2
-
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-
-    # 重点 2：必须用 ./gradlew 跑，这是唯一能保证版本生效的方式
-    - name: Build with Gradle Wrapper
-      run: ./gradlew bundleRelease assembleRelease
-
-    - name: Upload AAB
-      uses: actions/upload-artifact@v4
-      with:
-        name: app-release-aab
-        path: app/build/outputs/bundle/release/*.aab
+</manifest>
