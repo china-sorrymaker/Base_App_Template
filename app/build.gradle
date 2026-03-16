@@ -3,9 +3,8 @@ plugins {
 }
 
 android {
-    // 语法更新：必须写成 compileSdk
-    compileSdk 34
     namespace 'com.boss.unitsmaster'
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.boss.unitsmaster"
@@ -17,7 +16,7 @@ android {
 
     signingConfigs {
         release {
-            // 这里路径对齐，假设你的 jks 在根目录
+            // 确保 release-key.jks 在根目录
             storeFile file("../release-key.jks")
             storePassword "admin123"
             keyAlias "my-key-alias"
