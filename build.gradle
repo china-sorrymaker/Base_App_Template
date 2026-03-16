@@ -1,11 +1,22 @@
+// 根目录 build.gradle
 buildscript {
-    repositories { google(); mavenCentral() }
+    repositories {
+        google()
+        mavenCentral()
+    }
     dependencies {
-        // 这是安卓开发的“发动机”
+        // 固定这个版本，它是目前最稳的
         classpath 'com.android.tools.build:gradle:8.2.2'
     }
 }
 
 allprojects {
-    repositories { google(); mavenCentral() }
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
