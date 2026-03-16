@@ -1,2 +1,17 @@
-rootProject.name = "MillionAppBase"
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    // 关键：PREFER_SETTINGS 意思是“只听我的，别听 build.gradle 的”
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Base_App_Template"
 include ':app'
