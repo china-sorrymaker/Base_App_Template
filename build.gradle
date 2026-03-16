@@ -1,11 +1,19 @@
-// 根目录 build.gradle
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.2'
+        // 关键：从 8.0.0 升级到 8.2.2
+        classpath 'com.android.tools.build:gradle:8.2.2' 
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20"
+    }
+}
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
     }
 }
 
