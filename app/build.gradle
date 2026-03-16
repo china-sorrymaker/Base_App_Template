@@ -1,3 +1,4 @@
+// app/build.gradle
 plugins {
     id 'com.android.application'
 }
@@ -27,9 +28,6 @@ android {
         release {
             signingConfig signingConfigs.release
             minifyEnabled false
-            // 暂时去掉混淆检查，减少资源处理负担
-            shrinkResources false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -42,4 +40,6 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.gms:play-services-ads:23.0.0'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
