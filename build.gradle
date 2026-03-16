@@ -4,7 +4,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        // 锁定一个跟 Gradle 9.x 兼容性较好的插件版本
         classpath 'com.android.tools.build:gradle:8.2.2'
     }
 }
