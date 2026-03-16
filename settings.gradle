@@ -6,7 +6,7 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    // 强制：只能在 settings 里定仓库，build.gradle 里不准出现 repositories
+    // 强制：只能在 settings 里定仓库，build.gradle 里不准出现任何 repositories 闭包
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
