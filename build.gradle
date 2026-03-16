@@ -1,10 +1,10 @@
+// 根目录 build.gradle
 buildscript {
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        // 固定插件版本，保证兼容性
         classpath 'com.android.tools.build:gradle:8.2.2'
     }
 }
