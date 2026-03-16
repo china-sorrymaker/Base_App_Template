@@ -5,12 +5,10 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        // 锁定最稳定的 Android 插件版本
         classpath 'com.android.tools.build:gradle:8.2.2'
     }
 }
 
-// 这里的任务是为了清理环境，防止上次报错的残余干扰
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
