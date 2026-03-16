@@ -1,5 +1,5 @@
+// 根目录 build.gradle
 buildscript {
-    // 根目录也得有仓库，不然它下不了打包引擎
     repositories {
         google()
         mavenCentral()
