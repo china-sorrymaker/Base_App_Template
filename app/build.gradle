@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.boss.unitsmaster'
-    compileSdk 34 
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.boss.unitsmaster"
