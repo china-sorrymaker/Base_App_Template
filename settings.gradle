@@ -6,7 +6,7 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    // 关键：PREFER_SETTINGS 意思是“只听我的，别听 build.gradle 的”
+    // 强制全局统一，解决那个 mutate 报错
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
