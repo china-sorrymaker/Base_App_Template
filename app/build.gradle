@@ -1,7 +1,6 @@
 // app/build.gradle
 apply plugin: 'com.android.application'
 
-// 这里是解决报错的核心：在 app 模块内部定义自己的仓库
 repositories {
     google()
     mavenCentral()
