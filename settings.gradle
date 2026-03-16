@@ -1,3 +1,4 @@
+// settings.gradle
 pluginManagement {
     repositories {
         google()
@@ -6,8 +7,8 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    // 强制全局统一，解决那个 mutate 报错
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    // 强制：如果 build.gradle 里有冲突配置，直接报错忽略，以我为准
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
