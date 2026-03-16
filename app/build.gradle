@@ -1,3 +1,4 @@
+// app/build.gradle
 plugins {
     id 'com.android.application'
 }
@@ -16,7 +17,7 @@ android {
 
     signingConfigs {
         release {
-            // 确保 release-key.jks 就在根目录
+            // release-key.jks 必须在根目录
             storeFile file("../release-key.jks")
             storePassword "admin123"
             keyAlias "my-key-alias"
