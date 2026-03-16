@@ -17,7 +17,6 @@ android {
 
     signingConfigs {
         release {
-            // 路径对齐：签名文件在根目录，所以这里用 ../
             storeFile file("../release-key.jks")
             storePassword "admin123"
             keyAlias "my-key-alias"
