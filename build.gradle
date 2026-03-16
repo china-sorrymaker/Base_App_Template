@@ -1,11 +1,10 @@
-// 根目录 build.gradle
 buildscript {
-    // 仅保留 buildscript 内部的仓库，用于下载插件
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
+        // 锁定插件版本，保证兼容性
         classpath 'com.android.tools.build:gradle:8.2.2'
     }
 }
