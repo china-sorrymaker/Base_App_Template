@@ -16,7 +16,7 @@ android {
 
     signingConfigs {
         release {
-            // 确保 release-key.jks 就在根目录
+            // 确保你的 jks 文件就在根目录
             storeFile file("../release-key.jks")
             storePassword "admin123"
             keyAlias "my-key-alias"
@@ -28,7 +28,6 @@ android {
         release {
             signingConfig signingConfigs.release
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
