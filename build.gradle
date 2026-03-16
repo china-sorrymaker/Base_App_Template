@@ -1,4 +1,6 @@
+// 根目录 build.gradle
 buildscript {
+    // 仅保留 buildscript 内部的仓库，用于下载插件
     repositories {
         google()
         mavenCentral()
