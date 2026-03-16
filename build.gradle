@@ -1,4 +1,9 @@
 buildscript {
+    // 根目录也得有仓库，不然它下不了打包引擎
+    repositories {
+        google()
+        mavenCentral()
+    }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.2.2'
     }
