@@ -6,8 +6,8 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    // 换回 PREFER_PROJECT，给 Gradle 留点呼吸空间
-    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+    // 关键：强制首选 Settings 里的仓库，不准 Build.gradle 乱改
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
