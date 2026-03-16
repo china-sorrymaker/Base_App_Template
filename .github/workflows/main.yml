@@ -20,7 +20,7 @@ jobs:
 
       - name: Build APK & AAB
         # 核心改动：直接调用系统 gradle，不再依赖仓库里的 ./gradlew 脚本
-        run: gradle assembleRelease bundleRelease
+        run: ./gradlew assembleRelease bundleRelease
         env:
           KEY_STORE_PASSWORD: admin123
           KEY_PASSWORD: admin123
