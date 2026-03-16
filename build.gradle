@@ -1,12 +1,8 @@
 // 根目录 build.gradle
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.2'
-    }
+plugins {
+    // 锁定安卓插件版本，这是目前支持 Java 17 最稳的版本
+    id 'com.android.application' version '8.2.2' apply false
+    id 'com.android.library' version '8.2.2' apply false
 }
 
 allprojects {
