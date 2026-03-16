@@ -12,10 +12,14 @@ android {
         targetSdk 35
         versionCode 1
         versionName "1.0"
+        
+        // 这一行加上，双重保险
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
         release {
+            // 路径对齐：签名文件在根目录，所以这里用 ../
             storeFile file("../release-key.jks")
             storePassword "admin123"
             keyAlias "my-key-alias"
@@ -27,11 +31,21 @@ android {
         release {
             signingConfig signingConfigs.release
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    
+    // 强制 Java 17，对齐 GitHub Actions 的环境
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.gms:play-services-ads:23.0.0'
+    // 基础组件
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
