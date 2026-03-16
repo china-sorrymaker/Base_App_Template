@@ -4,7 +4,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        // 只有这个版本能镇住 Gradle 9.x
         classpath 'com.android.tools.build:gradle:8.2.2'
     }
 }
@@ -14,4 +13,8 @@ allprojects {
         google()
         mavenCentral()
     }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
