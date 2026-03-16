@@ -19,16 +19,18 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Install Gradle
+      - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: 8.7
 
-      - name: Build APK
-        run: gradle assembleRelease
-
-      - name: Build AAB
-        run: gradle bundleRelease
+      # 核心修改：必须在这里把 Secrets 映射给 Gradle 环境变量
+      - name: Build Android App (APK & AAB)
+        env:
+          SIGNING_STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+          SIGNING_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: gradle assembleRelease bundleRelease
 
       - name: Upload Files
         uses: actions/upload-artifact@v4
