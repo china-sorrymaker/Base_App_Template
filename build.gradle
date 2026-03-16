@@ -5,7 +5,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        // 固定这个版本，它是目前最稳的
+        // 锁定最稳定的打包引擎版本
         classpath 'com.android.tools.build:gradle:8.2.2'
     }
 }
