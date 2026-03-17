@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JSON Formatter Pro</string>
+    <string name="input_hint">Paste raw JSON here...</string>
+    <string name="btn_format">✨ Format</string>
+    <string name="btn_clear">Clear</string>
+    <string name="result_label">Result (Long press to copy):</string>
+    <string name="error_msg">❌ Invalid JSON format!</string>
+</resources>
