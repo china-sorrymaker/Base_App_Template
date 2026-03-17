@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">App Name</string>
-    <string name="input_hint">Please enter here...</string>
-    <string name="btn_action">Action</string>
-    <string name="btn_clear">Clear</string>
-    <string name="result_label">Result:</string>
-    <string name="error_msg">Error occurred!</string>
-</resources>
